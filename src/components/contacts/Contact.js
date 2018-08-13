@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import { Consumer } from '../../context'
 
-import './Contact.css';
 
 class Contact extends Component {
     static defaultProps = {
