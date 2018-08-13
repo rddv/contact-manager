@@ -1,0 +1,37 @@
+import React, {Component, Fragment} from 'react';
+import PropTypes from 'prop-types';
+
+import Contact from './Contact';
+
+import { Consumer } from '../../context';
+
+class Contacts extends Component {
+    static defaultProps = {};
+
+    static propTypes = {};
+
+    renderContact = (contact) => {
+        return(
+            <Contact
+                key={contact.id}
+                contact={contact}
+            />
+        );
+    }
+
+    render() {
+        return(
+            <Consumer>
+                {value => {
+                    return(
+                        <Fragment>
+                            {value.contacts.map(this.renderContact)}
+                        </Fragment>
+                    )
+                }}
+            </Consumer>
+        )
+    }
+}
+
+export default Contacts;
