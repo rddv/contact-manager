@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Header(props) {
     return (
@@ -10,22 +10,22 @@ function Header(props) {
                 <a href="/" className="navbar-brand">Contact Manager</a>
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link to="/" className="nav-link" activeClassName="active">
+                        <NavLink to="/" className="nav-link" activeClassName="active">
                             <i className="fas fa-home"/>
                             Home
-                        </Link>
+                        </NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link to="/contact/add" className="nav-link" activeClassName="active">
+                        <NavLink to="/contact/add" className="nav-link" activeClassName="active">
                             <i className="fas fa-plus"/>
                             Add
-                        </Link>
+                        </NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link to="/about" className="nav-link" activeClassName="active">
+                        <NavLink to="/about" className="nav-link" activeClassName="active">
                             <i className="fas fa-question"/>
                             About
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </div>
