@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-function About(props) {
+function About() {
     return (
         <div>
             <h1 className="display-4">About Contact Manager</h1>

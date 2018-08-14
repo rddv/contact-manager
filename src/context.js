@@ -21,6 +21,16 @@ const reducer = (state, action) => {
                 ...state,
                 contacts: state.contacts.map(contact => contact.id === action.payload.id ? (contact = action.payload) : contact)
             }
+        case 'SPINNER_ON':
+            return{
+                ...state,
+                spinner: true,
+            }
+        case 'SPINNER_OFF':
+            return{
+                ...state,
+                spinner: false,
+            }
         default:
             return state;
     }
@@ -28,6 +38,7 @@ const reducer = (state, action) => {
 
 export class Provider extends Component {
     state = {
+        spinner: false,
         contacts: [],
         dispatch: action => {
             this.setState(state => reducer(state, action))

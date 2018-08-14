@@ -8,7 +8,9 @@ import { Consumer } from '../../context';
 class AddContact extends Component {
     static defaultProps = {};
 
-    static propTypes = {};
+    static propTypes = {
+        value: PropTypes.object.isRequired
+    };
 
     state = {
         name: '',

@@ -8,7 +8,9 @@ import { Consumer } from '../../context';
 class Contacts extends Component {
     static defaultProps = {};
 
-    static propTypes = {};
+    static propTypes = {
+        value: PropTypes.object.isRequired
+    };
 
     renderContact = (contact) => {
         return(

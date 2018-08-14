@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import TextInputGroup from '../layout/TextInputGroup';
@@ -19,6 +18,7 @@ class EditContact extends Component {
 
     async componentDidMount() {
         const { id } = this.props.match.params;
+
         const res = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
 
         const { name, email, phone } = res.data;
@@ -44,12 +44,18 @@ class EditContact extends Component {
             phone,
         };
         const { id } = this.props.match.params;
+        dispatch({
+            type: 'SPINNER_ON'
+        })
         const res = await axios
             .put(`https://jsonplaceholder.typicode.com/users/${id}`, newContact)
         dispatch({
             type: 'UPDATE_CONTACT',
             payload: res.data
         });
+        dispatch({
+            type: 'SPINNER_OFF'
+        })
         //clear state
         this.setState({
             name: '',
